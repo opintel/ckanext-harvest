@@ -2,7 +2,6 @@ from ckanharvester import CKANHarvester
 import json
 from ckan import model
 import ckan.lib.munge as munge
-from ckanext.harvest.harvesters.dgu_base import PackageDictError
 
 log = __import__('logging').getLogger(__name__)
 
@@ -83,7 +82,7 @@ class DKANHarvester(CKANHarvester):
                     break
 
             if 'resources' not in package:
-                raise PackageDictError('Dataset has no resources')
+                raise ValueError('Dataset has no resources')
             for resource in package['resources']:
                 resource['description'] = resource['title']
 
