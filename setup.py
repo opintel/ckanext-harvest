@@ -27,6 +27,7 @@ setup(
 		'nose',
 		'mock',
 	],
+	#dkan_harvester=ckanext.harvest.harvesters:DKANHarvester
 	test_suite = 'nose.collector',
 	entry_points=\
 	"""
@@ -34,7 +35,6 @@ setup(
 	# Add plugins here, eg
 	harvest=ckanext.harvest.plugin:Harvest
 	ckan_harvester=ckanext.harvest.harvesters:CKANHarvester
-	dkan_harvester=ckanext.harvest.harvesters:DKANHarvester
     [ckan.test_plugins]
 	test_harvester=ckanext.harvest.tests.test_queue:MockHarvester
 	test_harvester2=ckanext.harvest.tests.test_queue2:MockHarvester
