@@ -348,7 +348,7 @@ class HarvesterBase(SingletonPlugin):
                 log.info('Package with GUID %s does not exist, let\'s create it' % harvest_object.guid)
                 harvest_object.current = True
                 harvest_object.package_id = package_dict['id']
-                log.info(package_dict)
+                #log.info(package_dict)
                 # Defer constraints and flush so the dataset can be indexed with
                 # the harvest object id (on the after_show hook from the harvester
                 # plugin)
