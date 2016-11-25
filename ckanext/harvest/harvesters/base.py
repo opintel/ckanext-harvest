@@ -360,6 +360,7 @@ class HarvesterBase(SingletonPlugin):
                 new_package = p.toolkit.get_action(
                     'package_create' if package_dict_form == 'package_show'
                     else 'package_create_rest')(context, package_dict)
+                log.info(new_package)
 
             Session.commit()
 
