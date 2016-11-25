@@ -192,7 +192,7 @@ class HarvesterBase(SingletonPlugin):
         context['defer_commit'] = True  # See ckan/ckan#1714
         self._site_user = p.toolkit.get_action('get_site_user')(context, {})
         self._user_name = self._site_user['name']
-        print "EL usuario para el harvest es {0}".format(self._user_name)
+
         return self._user_name
 
     def _create_harvest_objects(self, remote_ids, harvest_job):
@@ -356,6 +356,7 @@ class HarvesterBase(SingletonPlugin):
                 model.Session.execute('SET CONSTRAINTS harvest_object_package_id_fkey DEFERRED')
                 model.Session.flush()
 
+                log.info(package_dict)
                 new_package = p.toolkit.get_action(
                     'package_create' if package_dict_form == 'package_show'
                     else 'package_create_rest')(context, package_dict)
