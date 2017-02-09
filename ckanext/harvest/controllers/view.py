@@ -74,6 +74,7 @@ class ViewController(BaseController):
                 msg = 'An error occurred: [%s]' % str(e)
                 h.flash_error(msg)
 
+        log.debug(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
         h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
 
     def clear(self, id):
@@ -89,6 +90,7 @@ class ViewController(BaseController):
             msg = 'An error occurred: [%s]' % str(e)
             h.flash_error(msg)
 
+        log.debug(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
         h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
 
     def show_object(self, id, ref_type='object'):
