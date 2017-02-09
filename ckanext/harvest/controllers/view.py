@@ -74,8 +74,8 @@ class ViewController(BaseController):
                 msg = 'An error occurred: [%s]' % str(e)
                 h.flash_error(msg)
 
-        log.debug(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
-        h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
+        # Ajuste para /busca
+        h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id).replace('/busca', ''))
 
     def clear(self, id):
         try:
@@ -90,8 +90,8 @@ class ViewController(BaseController):
             msg = 'An error occurred: [%s]' % str(e)
             h.flash_error(msg)
 
-        log.debug(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
-        h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id))
+        # Ajuste para /busca
+        h.redirect_to(h.url_for('{0}_admin'.format(DATASET_TYPE_NAME), id=id).replace('/busca', ''))
 
     def show_object(self, id, ref_type='object'):
 
