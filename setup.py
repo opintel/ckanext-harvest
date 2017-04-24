@@ -27,6 +27,7 @@ setup(
 		'nose',
 		'mock',
 	],
+	#dkan_harvester=ckanext.harvest.harvesters:DKANHarvester
 	test_suite = 'nose.collector',
 	entry_points=\
 	"""

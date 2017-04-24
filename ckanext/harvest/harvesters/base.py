@@ -348,6 +348,7 @@ class HarvesterBase(SingletonPlugin):
                 log.info('Package with GUID %s does not exist, let\'s create it' % harvest_object.guid)
                 harvest_object.current = True
                 harvest_object.package_id = package_dict['id']
+                #log.info(package_dict)
                 # Defer constraints and flush so the dataset can be indexed with
                 # the harvest object id (on the after_show hook from the harvester
                 # plugin)
@@ -359,6 +360,7 @@ class HarvesterBase(SingletonPlugin):
                 new_package = p.toolkit.get_action(
                     'package_create' if package_dict_form == 'package_show'
                     else 'package_create_rest')(context, package_dict)
+                log.info(new_package)
 
             Session.commit()
 
